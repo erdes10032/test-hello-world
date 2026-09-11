@@ -17,5 +17,11 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install Ruff
+        run: pip install ruff
+
+      - name: Run Ruff
+        run: ruff check .
+
       - name: Run Hello World
         run: python main.py
