@@ -20,5 +20,10 @@ jobs:
       - name: Run Ruff
         uses: astral-sh/ruff-action@v3
 
+      - name: Check formatting
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "format --check"
+
       - name: Run Hello World
         run: python main.py
