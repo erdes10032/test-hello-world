@@ -1,4 +1,4 @@
-def hello(name):
- print("Hello,",name)
+from hello import hello
 
-hello("Alex")
+
+print(hello("World"))

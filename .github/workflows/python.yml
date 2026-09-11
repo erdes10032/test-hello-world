@@ -17,6 +17,12 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run tests
+        run: python -m pytest
+
       - name: Run Ruff
         uses: astral-sh/ruff-action@v3
 
