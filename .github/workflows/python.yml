@@ -30,6 +30,9 @@ jobs:
         with:
           args: "format --check"
 
+      - name: Run mypy
+        run: mypy .
+
       - name: Run detect-secrets
         shell: bash
         run: |
