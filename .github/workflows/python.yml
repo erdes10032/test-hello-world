@@ -31,7 +31,10 @@ jobs:
           args: "format --check"
 
       - name: Run detect-secrets
-        run: detect-secrets scan
+        shell: bash
+        run: |
+          detect-secrets scan > secrets.json
+          python -c "import json; data=json.load(open('secrets.json')); assert not data['results'], f'Secrets found: {data[\"results\"]}'"
 
       - name: Run Hello World
         run: python main.py
